@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio | Crazy Awesome",
-  description: "An insane developer portfolio with wild animations and effects",
+  title: "Lakshya Jain",
+  description: "",
 };
 
 export default function RootLayout({
