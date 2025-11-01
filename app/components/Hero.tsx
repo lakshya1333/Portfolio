@@ -2,12 +2,41 @@
 
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaArrowRight, FaCode, FaLaptopCode, FaRocket } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaArrowRight, FaCode, FaLaptopCode, FaRocket, FaDownload } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      
+      {/* Gradient Orbs */}
+      <motion.div
+        className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.5, 0.3, 0.5],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
       {/* Navigation */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
@@ -125,6 +154,15 @@ export default function Hero() {
                 </span>
               </Link>
               
+              <a
+                href="/Lakshya_Jain_CV.pdf"
+                download
+                className="group px-8 py-4 font-bold border-2 border-purple-500/50 text-purple-400 rounded-lg hover:bg-purple-500/10 hover:border-purple-500 transition-all flex items-center gap-2"
+              >
+                <FaDownload className="group-hover:animate-bounce" />
+                Download CV
+              </a>
+              
               <Link
                 href="/contact"
                 className="group px-8 py-4 font-bold border-2 border-cyan-500/50 text-cyan-400 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-500 transition-all flex items-center gap-2"
@@ -141,7 +179,7 @@ export default function Hero() {
               className="flex gap-4 pt-4"
             >
               <a
-                href="https://github.com/lakshya1333"
+                href="https://github.com/lakshyajain"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center bg-white/5 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-500 transition-all group"
@@ -149,7 +187,7 @@ export default function Hero() {
                 <FaGithub className="text-xl text-cyan-400 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="https://linkedin.com/in/lakshya-jain-490ab9211"
+                href="https://linkedin.com/in/lakshyajain"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center bg-white/5 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-500 transition-all group"

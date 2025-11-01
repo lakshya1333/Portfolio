@@ -86,7 +86,7 @@ export default function Contact() {
               <h3 className="text-2xl font-bold text-white mb-4">Connect with me</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/lakshyajain"
+                  href="https://github.com/lakshya1333"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-white/5 border border-cyan-500/30 rounded-lg hover:border-cyan-500/60 hover:bg-cyan-500/10 transition-all"
@@ -94,7 +94,7 @@ export default function Contact() {
                   <FaGithub className="text-3xl text-cyan-400" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/lakshyajain"
+                  href="https://linkedin.com/in/lakshya-jain-490ab9211"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-white/5 border border-cyan-500/30 rounded-lg hover:border-cyan-500/60 hover:bg-cyan-500/10 transition-all"

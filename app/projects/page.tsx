@@ -21,6 +21,53 @@ const projects = [
     ],
     gradient: "from-cyan-500 to-blue-500",
   },
+    {
+    title: "M# Hackathon Website",
+    subtitle: "Hackathon Platform (M#)",
+    description:
+      "A high-traffic hackathon platform built to host thousands of teams, manage registrations, and provide a flawless contest experience.",
+    tech: ["React", "Node.js", "AWS", "S3", "Docker"],
+    features: [
+      "Successfully handled 10,000+ site visits and 5,000+ registrations with zero downtime",
+      "Deployed on AWS with auto-scaling and health-checked services to ensure high availability",
+      "Used Amazon S3 for secure file uploads (submissions, assets) and fast content delivery",
+      "Implemented robust registration workflows, team management, and live event feeds",
+      "Designed monitoring and alerting for traffic spikes and system health",
+    ],
+    gradient: "from-indigo-500 to-violet-500",
+  },
+  {
+    title: "Simpfuscator - Simple Binary Obfuscator",
+    subtitle: "Security & Binary Analysis Tool",
+    description:
+      "Advanced ELF binary obfuscation tool with multiple encryption methods, digital signatures, and a modern React-based dashboard for secure file processing.",
+    tech: ["React", "TypeScript", "Node.js", "Python", "Docker", "Tailwind CSS", "RSA-PSS"],
+    features: [
+      "ELF Binary Support: Works exclusively with ELF (Executable and Linkable Format) files",
+      "Multiple Encryption: XOR encryption (fast, lightweight) and RSA encryption with configurable key sizes",
+      "Digital Signatures: RSA-PSS (2048-bit) signature verification for file integrity and authenticity",
+      "Modern Dark-themed UI: Built with React, TypeScript, and Tailwind CSS for seamless UX",
+      "Real-time Progress: Live obfuscation progress tracking with detailed debug information and logs",
+      "Secure Upload: File validation, signature verification, and sandboxed processing before obfuscation",
+    ],
+    gradient: "from-red-500 to-rose-500",
+  },
+  {
+    title: "Chatty - Anonymous Group Chat",
+    subtitle: "Real-Time Communication Platform",
+    description:
+      "A privacy-focused anonymous group chat application where users can create room IDs and communicate securely with only those who have access to the room code.",
+    tech: ["React", "TypeScript", "WebSocket", "Node.js", "Express", "Tailwind CSS"],
+    features: [
+      "Room-based anonymous messaging: Create unique room IDs for private group conversations",
+      "Real-time communication powered by WebSocket for instant message delivery",
+      "Built with TypeScript for type-safe, maintainable, and scalable codebase",
+      "Privacy-first design: No personal information required, messages tied only to room IDs",
+      "Modern UI with Tailwind CSS: Clean, responsive interface for seamless chatting experience",
+      "Upcoming features: Image/video sharing, GIF support, and peer-to-peer money transfers",
+    ],
+    gradient: "from-blue-500 to-indigo-500",
+  },
   {
     title: "Multithreaded Proxy Web Server",
     subtitle: "Intermediate Systems Programming",
@@ -48,6 +95,69 @@ const projects = [
       "Deployed and tested backend APIs for reliability using Postman",
     ],
     gradient: "from-green-500 to-teal-500",
+  },
+  {
+    title: "Progress Tracker",
+    subtitle: "GitHub to LaTeX Resume Generator",
+    description:
+      "Automated resume builder that integrates with GitHub to fetch your contributions, projects, and stats, then converts them into professional LaTeX-formatted resumes for interviews.",
+    tech: ["React", "Node.js", "GitHub API", "LaTeX", "Express", "OAuth"],
+    features: [
+      "Integrated GitHub OAuth for secure account authentication and data fetching",
+      "Automatically extracts repository stats, commit history, languages, and project descriptions",
+      "Generates professionally formatted LaTeX resumes with customizable templates",
+      "Real-time preview of generated resume with one-click PDF export functionality",
+      "Built REST APIs to process GitHub data and compile LaTeX documents on the server",
+    ],
+    gradient: "from-amber-500 to-orange-500",
+  },
+  {
+    title: "Stock Analytics Dashboard",
+    subtitle: "Data Science & Financial Analysis",
+    description:
+      "Comprehensive stock market analysis tool built with Python and Jupyter Notebook, featuring advanced data visualization, trend analysis, and predictive insights for investment decisions.",
+    tech: ["Python", "Jupyter", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly"],
+    features: [
+      "Real-time stock data analysis with historical trend visualization and pattern recognition",
+      "Interactive visualizations: Candlestick charts, moving averages, volume analysis, and correlation heatmaps",
+      "Statistical analysis: Calculate volatility, RSI, MACD, Bollinger Bands, and other technical indicators",
+      "Comparative portfolio analysis: Compare multiple stocks and analyze risk-return profiles",
+      "Data-driven insights: Generate automated findings and recommendations based on statistical patterns",
+      "Built with Pandas for data manipulation and Plotly/Seaborn for professional-grade visualizations",
+    ],
+    gradient: "from-emerald-500 to-cyan-500",
+  },
+  {
+    title: "Mental Health & Wellness Platform",
+    subtitle: "Full-Stack Wellbeing Application",
+    description:
+      "A comprehensive mental health platform with mood tracking, anonymous peer support, interactive games, and personalized wellness dashboards to help users manage their mental wellbeing.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "JWT", "Chart.js"],
+    features: [
+      "Secure user authentication with JWT tokens and encrypted password storage",
+      "Interactive mood tracking dashboard with beautiful charts showing emotional patterns over time",
+      "Anonymous chat rooms: Connect with peers for support without revealing personal identity",
+      "Mental wellness games: Brain-training puzzles, mindfulness exercises, and stress-relief activities",
+      "Personalized insights: AI-driven mood analysis and suggestions based on user data patterns",
+      "Real-time notifications and reminders for self-care activities and wellness check-ins",
+    ],
+    gradient: "from-pink-500 to-purple-500",
+  },
+  {
+    title: "MyBrain - Content Management Hub",
+    subtitle: "Full-Stack Content Organization Platform",
+    description:
+      "A personal knowledge management system where users can save, organize, and access important YouTube videos and Twitter tweets in one centralized platform.",
+    tech: ["TypeScript", "React", "Tailwind CSS", "MongoDB", "Express", "JWT", "Zod", "Render"],
+    features: [
+      "Save and organize YouTube videos and Twitter tweets with tags and categories",
+      "Secure authentication with JWT tokens and custom middleware for protected routes",
+      "Input validation using Zod schemas to ensure data integrity and type safety",
+      "MongoDB database for efficient storage and retrieval of bookmarked content",
+      "Clean, intuitive UI built with React and Tailwind CSS for seamless content browsing",
+      "Deployed on Render with optimized performance and reliable uptime for production use",
+    ],
+    gradient: "from-violet-500 to-fuchsia-500",
   },
 ];
 
