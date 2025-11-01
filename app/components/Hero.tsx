@@ -99,7 +99,7 @@ export default function Hero() {
               <div className="inline-block mb-4">
                 <div className="flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                  <span className="text-cyan-400 text-sm font-medium">Available for opportunities</span>
+                  <span className="text-cyan-400 text-sm font-medium">Incoming Summer Intern @Microsoft</span>
                 </div>
               </div>
               
@@ -240,7 +240,7 @@ export default function Hero() {
               {/* Profile Image */}
               <div className="absolute inset-16 rounded-full overflow-hidden border-4 border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
                 <img
-                  src="/shinchan.jpg"
+                  src="/lakshya.jpg"
                   alt="Lakshya Jain"
                   className="w-full h-full object-cover"
                 />

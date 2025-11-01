@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { FaPaperPlane, FaEnvelope, FaPhone, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import ParticlesBackground from "../components/ParticlesBackground";
+import Navbar from "../components/Navbar";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,29 +12,50 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent! (This is a demo)");
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    // Create mailto link with pre-filled content
+    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:lakshyajain906@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ name: "", email: "", message: "" });
+
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 3000);
+    }, 500);
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <div className="fixed inset-0 z-0">
         <ParticlesBackground />
       </div>
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <Navbar />
+      
+      <div className="max-w-5xl mx-auto relative z-10 px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-16"
         >
-          <Link href="/" className="text-cyan-400 hover:text-cyan-300 mb-8 inline-block">
-            ← Back to Home
-          </Link>
           <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-6">
             Get In Touch
           </h1>
@@ -173,12 +194,47 @@ export default function Contact() {
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition-all duration-300 flex items-center justify-center gap-3"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className={`w-full px-8 py-4 font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-3 ${
+                    isSubmitting
+                      ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                      : submitStatus === 'success'
+                      ? 'bg-green-500 text-white'
+                      : 'bg-cyan-500 text-black hover:bg-cyan-400'
+                  }`}
                 >
-                  <FaPaperPlane /> SEND MESSAGE
+                  {isSubmitting ? (
+                    <>
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      >
+                        <FaPaperPlane />
+                      </motion.div>
+                      SENDING...
+                    </>
+                  ) : submitStatus === 'success' ? (
+                    <>
+                      ✓ EMAIL CLIENT OPENED
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane /> SEND MESSAGE
+                    </>
+                  )}
                 </motion.button>
+
+                {submitStatus === 'success' && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-green-400 text-sm text-center mt-2"
+                  >
+                    Your email client should open with the message pre-filled. Complete sending from there!
+                  </motion.p>
+                )}
               </div>
             </form>
           </motion.div>

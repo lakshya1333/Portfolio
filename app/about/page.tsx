@@ -1,26 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { FaGraduationCap, FaCode, FaLaptopCode } from "react-icons/fa";
 import ParticlesBackground from "../components/ParticlesBackground";
+import Navbar from "../components/Navbar";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <div className="fixed inset-0 z-0">
         <ParticlesBackground />
       </div>
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <Navbar />
+      
+      <div className="max-w-6xl mx-auto relative z-10 px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <Link href="/" className="text-cyan-400 hover:text-cyan-300 mb-8 inline-block">
-            ← Back to Home
-          </Link>
           <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-6">
             About Me
           </h1>
