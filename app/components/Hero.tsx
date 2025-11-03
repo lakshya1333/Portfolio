@@ -179,7 +179,7 @@ export default function Hero() {
               className="flex gap-4 pt-4"
             >
               <a
-                href="https://github.com/lakshyajain"
+                href="https://github.com/lakshya1333"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center bg-white/5 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-500 transition-all group"
@@ -187,7 +187,7 @@ export default function Hero() {
                 <FaGithub className="text-xl text-cyan-400 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="https://linkedin.com/in/lakshyajain"
+                href="https://linkedin.com/in/lakshya-jain-490ab9211"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center bg-white/5 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-500 transition-all group"
