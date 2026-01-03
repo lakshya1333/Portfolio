@@ -15,31 +15,44 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Create mailto link with pre-filled content
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:lakshyajain906@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Open email client
-    window.location.href = mailtoLink;
+      const data = await response.json();
 
-    // Show success message
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: "", email: "", message: "" });
-
-      // Reset status after 3 seconds
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: "", email: "", message: "" });
+        
+        // Reset status after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSubmitStatus('error');
       setTimeout(() => {
         setSubmitStatus('idle');
-      }, 3000);
-    }, 500);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -202,6 +215,8 @@ export default function Contact() {
                       ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
                       : submitStatus === 'success'
                       ? 'bg-green-500 text-white'
+                      : submitStatus === 'error'
+                      ? 'bg-red-500 text-white'
                       : 'bg-cyan-500 text-black hover:bg-cyan-400'
                   }`}
                 >
@@ -217,7 +232,11 @@ export default function Contact() {
                     </>
                   ) : submitStatus === 'success' ? (
                     <>
-                      ✓ EMAIL CLIENT OPENED
+                      ✓ MESSAGE SENT
+                    </>
+                  ) : submitStatus === 'error' ? (
+                    <>
+                      ✗ FAILED TO SEND
                     </>
                   ) : (
                     <>
@@ -232,7 +251,17 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-green-400 text-sm text-center mt-2"
                   >
-                    Your email client should open with the message pre-filled. Complete sending from there!
+                    Thank you for your message! I'll get back to you soon.
+                  </motion.p>
+                )}
+
+                {submitStatus === 'error' && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-red-400 text-sm text-center mt-2"
+                  >
+                    Failed to send message. Please try again or email me directly.
                   </motion.p>
                 )}
               </div>
