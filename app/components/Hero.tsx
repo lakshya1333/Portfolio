@@ -96,13 +96,6 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block mb-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                  <span className="text-cyan-400 text-sm font-medium">Incoming Summer Intern @Microsoft</span>
-                </div>
-              </div>
-              
               <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
                 Hi, I'm{" "}
                 <span className="gradient-text">Lakshya</span>
