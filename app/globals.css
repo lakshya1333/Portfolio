@@ -31,14 +31,14 @@ body {
 }
 
 .bg-grid-pattern {
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 .tech-grid {
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 243, 255, 0.15) 2px, transparent 2px),
     linear-gradient(90deg, rgba(0, 243, 255, 0.15) 2px, transparent 2px),
     linear-gradient(rgba(176, 38, 255, 0.1) 1px, transparent 1px),
@@ -52,7 +52,7 @@ body {
 }
 
 .glow-text {
-  text-shadow: 
+  text-shadow:
     0 0 10px var(--neon-blue),
     0 0 20px var(--neon-blue),
     0 0 30px var(--neon-blue),
@@ -68,18 +68,23 @@ body {
   0% {
     transform: translate(0);
   }
+
   20% {
     transform: translate(-2px, 2px);
   }
+
   40% {
     transform: translate(-2px, -2px);
   }
+
   60% {
     transform: translate(2px, 2px);
   }
+
   80% {
     transform: translate(2px, -2px);
   }
+
   100% {
     transform: translate(0);
   }
@@ -87,7 +92,7 @@ body {
 
 .neon-border {
   border: 2px solid var(--neon-blue);
-  box-shadow: 
+  box-shadow:
     0 0 10px var(--neon-blue),
     inset 0 0 10px var(--neon-blue);
   animation: neon-pulse 2s ease-in-out infinite alternate;
@@ -95,12 +100,13 @@ body {
 
 @keyframes neon-pulse {
   from {
-    box-shadow: 
+    box-shadow:
       0 0 10px var(--neon-blue),
       inset 0 0 10px var(--neon-blue);
   }
+
   to {
-    box-shadow: 
+    box-shadow:
       0 0 20px var(--neon-blue),
       0 0 30px var(--neon-pink),
       inset 0 0 20px var(--neon-blue);
@@ -108,13 +114,11 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(
-    45deg,
-    var(--neon-blue),
-    var(--neon-purple),
-    var(--neon-pink),
-    var(--neon-green)
-  );
+  background: linear-gradient(45deg,
+      var(--neon-blue),
+      var(--neon-purple),
+      var(--neon-pink),
+      var(--neon-green));
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -126,9 +130,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -139,9 +145,12 @@ body {
 }
 
 @keyframes floating {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -156,7 +165,7 @@ body {
 
 .card-hover:hover {
   transform: translateY(-10px);
-  box-shadow: 
+  box-shadow:
     0 10px 40px rgba(0, 243, 255, 0.3),
     0 0 20px rgba(255, 0, 255, 0.2);
   border-color: var(--neon-blue);

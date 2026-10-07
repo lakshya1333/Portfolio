@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-      
+
       {/* Gradient Orbs */}
       <motion.div
         className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
           </div>
         </Link>
-        
+
         <div className="hidden md:flex gap-8 items-center">
           <Link
             href="/about"
@@ -100,17 +100,19 @@ export default function Hero() {
                 Hi, I'm{" "}
                 <span className="gradient-text">Lakshya</span>
               </h1>
-              
+
               <div className="text-3xl md:text-4xl font-bold text-white mb-6 h-16">
                 <TypeAnimation
                   sequence={[
-                    "Full-Stack Developer 💻",
+                    "Backend & Systems Engineer",
                     2000,
-                    "Backend Specialist ⚡",
+                    "Building High-Throughput Architectures",
                     2000,
-                    "Problem Solver 🧩",
+                    "Low-Level Systems & Sockets in C/C++",
                     2000,
-                    "Tech Enthusiast 🚀",
+                    "Distributed Systems & Resilient APIs",
+                    2000,
+                    "Full-Stack Web with Next.js & TypeScript",
                     2000,
                   ]}
                   wrapper="span"
@@ -126,8 +128,9 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg text-gray-400 leading-relaxed max-w-xl"
             >
-              Computer and Communication Engineering student at <span className="text-cyan-400 font-semibold">MIT Manipal</span>, 
-              building scalable web applications and turning complex problems into elegant solutions.
+              A final-year B.Tech student in Computer and Communication Engineering at <span className="text-cyan-400 font-semibold">MIT Manipal</span>.
+              Specializing in backend systems, distributed architectures, and low-level systems programming.
+              Passionate about building high-performance, resilient software.
             </motion.p>
 
             <motion.div
@@ -146,7 +149,7 @@ export default function Hero() {
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
-              
+
               <a
                 href="/Lakshya_Jain_CV.pdf"
                 download
@@ -155,7 +158,7 @@ export default function Hero() {
                 <FaDownload className="group-hover:animate-bounce" />
                 Download CV
               </a>
-              
+
               <Link
                 href="/contact"
                 className="group px-8 py-4 font-bold border-2 border-cyan-500/50 text-cyan-400 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-500 transition-all flex items-center gap-2"
